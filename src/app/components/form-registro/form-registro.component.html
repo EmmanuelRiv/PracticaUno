@@ -1,0 +1,39 @@
+<div class="card p-4">
+  <form name="form"  [formGroup]="form" (submit)="guardarPers(form)" >
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="labelNombre">Nombre</label>
+          <input type="text" class="form-control"  formControlName="Nombre"  placeholder="Nombre Completo" [ngClass]="{'is-invalid':form.get('Nombre').touched && form.get('Nombre').invalid}">
+          <div class="invalid-feedback">
+            <div>Nombre es requerido</div>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="labelCorreo">Correo</label>
+            <input type="text" class="form-control"  formControlName="Correo" placeholder="Correo" [ngClass]="{'is-invalid':
+            form.get('Correo').touched && form.get('Correo').invalid}">
+            <div class="invalid-feedback">
+              <div>Correo es requerido</div>
+            </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="labelSexo">Sexo</label>
+          <input type="text" class="form-control" formControlName="Sexo">
+          <div class="invalid-feedback">
+            <div>Sexo es requerido</div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="labelEdad">Edad</label>
+          <input type="text" class="form-control" placeholder="Edad" formControlName="Edad" placeholder="Edad" [ngClass]="{'is-invalid':
+          form.get('Edad').touched && form.get('Edad').invalid}">
+          <div class="invalid-feedback">
+            <div>Edad es requerido</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Guardar</button>
+    </form>
+</div>
